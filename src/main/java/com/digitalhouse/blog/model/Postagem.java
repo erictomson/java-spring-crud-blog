@@ -27,11 +27,11 @@ public class Postagem implements Serializable {
     private Long id;
     // @Column(name="post_titulo")     // Determinando o nome da tabela
     @NotNull                        // Definindo como não nulo
-    @Size(min=5,max=100)            // Limites mínimo e máximo de caracteres
+    @Size(min=2,max=100)            // Limites mínimo e máximo de caracteres
     private String titulo;
     // @Column(name="post_texto")      // Determinando o nome da tabela
     @NotNull                        // Definindo como não nulo
-    @Size(min=5,max=500)            // Limites mínimo e máximo de caracteres
+    @Size(min=2,max=255)            // Limites mínimo e máximo de caracteres
     private String texto;
     // @Column(name="post_data")      // Determinando o nome da tabela
     @Temporal(TemporalType.TIMESTAMP)   // Insere a data atual

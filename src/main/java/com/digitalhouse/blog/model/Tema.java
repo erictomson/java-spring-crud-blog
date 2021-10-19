@@ -28,7 +28,7 @@ public class Tema implements Serializable {
     private Long Id;
     // Definindo campos como Not Null
     @NotNull
-    @Size(min=5,max=25)
+    @Size(min=2,max=25)
     private String descricao;
     // Cardinalidade: 1 tema para muitas postagens
     @OneToMany (mappedBy = "tema", cascade = CascadeType.ALL)
