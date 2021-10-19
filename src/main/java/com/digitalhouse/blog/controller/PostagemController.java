@@ -32,7 +32,7 @@ public class PostagemController {
         // ao Spring que cuide da parte de trazer da url a informação e use com parametro.
         return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
                 .orElse(ResponseEntity.notFound().build());
-        // Se der tudo certo o objeto encontrado vem no responseEntity.om
+        // Se der tudo certo o objeto encontrado vem no responseEntity.ok
         // pode não existir então o orElse informar o not found
     }
 

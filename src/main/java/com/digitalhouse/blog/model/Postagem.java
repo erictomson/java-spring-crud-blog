@@ -1,5 +1,7 @@
 package com.digitalhouse.blog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -34,6 +36,21 @@ public class Postagem implements Serializable {
     // @Column(name="post_data")      // Determinando o nome da tabela
     @Temporal(TemporalType.TIMESTAMP)   // Insere a data atual
     private Date data = new java.sql.Date(System.currentTimeMillis());
+
+    // Cardinalidade: muitas postagens para 1 tema
+    @ManyToOne
+    // Ignora recursividade:
+    @JsonIgnoreProperties("postagem")
+    private Tema tema;
+
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
