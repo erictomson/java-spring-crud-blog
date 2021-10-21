@@ -5,13 +5,12 @@ import com.digitalhouse.blog.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 // Definindo a classe como um controller
-@Controller
+@RestController
 // Mapeando o End Point temas
 @RequestMapping("/temas")
 // Captura qualquer referência a Tema
@@ -19,6 +18,7 @@ import java.util.List;
 public class TemaController {
 
     // Injetando o repositório via Spring
+    // Será usado como se fosse um objeto
     @Autowired
     private TemaRepository repository;
 
